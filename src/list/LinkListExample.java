@@ -2,6 +2,7 @@ package list;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 public class LinkListExample {
 	
@@ -14,6 +15,8 @@ public class LinkListExample {
 		LinkListExample example = new LinkListExample();
 		example.setlinkedListItems();
 		example.printAllItems();
+		//example.removeAllItems();
+		example.removeItems();
 		 
 
 	}
@@ -57,6 +60,30 @@ public class LinkListExample {
 		while(iterator.hasNext()){
 			System.out.println(" "+iterator.next());
 		}
+	}
+	private void removeItems(){
+		
+		LinkedList items = getList();
+		Iterator<String> iterator = items.iterator();
+		System.out.println("\n-----Before removing element-----");
+		System.out.println(items.toString());
+		System.out.println("\n-----After removing element-----");
+		while(iterator.hasNext()){
+			String s = iterator.next();
+			iterator.remove();
+			System.out.println(items.toString());
+		}
+		//System.out.println(items.toString());
+		
+	}
+    private void removeAllItems(){
+		List list = getList();
+		System.out.println("\n-----Before removing element-----");
+		System.out.println(list.toString());
+		System.out.println("\n-----After removing element-----");
+		//list.clear();
+		list.removeAll(list);
+		System.out.println(list.toString());
 	}
 
 }
