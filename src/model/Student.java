@@ -33,7 +33,7 @@ public class Student {
 	}
 	@Override
 	public String toString() {
-		return "Student [roll=" + roll + ",\n name=" + name + ",\n age=" + age
+		return "Student [roll=" + roll + ",name=" + name + ",age=" + age
 				+ "]";
 	}
 	 
