@@ -79,7 +79,7 @@ public class SortingExample {
 		}
 		
 		// After sorting of a customized(Student list) list
-		// for this, need to import sorting.model.Student instead of model.Student
+		// for this, need to import sorting.model
 //		System.out.println("\n\nSorted by age(Comparable interface example) ..........");
 //		Collections.sort(mItems);
 //		for(Student st:mItems){
