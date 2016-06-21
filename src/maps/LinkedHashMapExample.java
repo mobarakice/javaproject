@@ -1,14 +1,15 @@
 package maps;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 import model.Student;
 
-public class HashMapExample {
+public class LinkedHashMapExample {
 
-	private static HashMap<Integer, String> mMap;
-	private static HashMap<String, Student> mStudentMap;
+	private static LinkedHashMap<Integer, String> mMap;
+	private static LinkedHashMap<String, Student> mStudentMap;
 	//private static Scanner sc;
 	public static void main(String[] args) {
 		
@@ -16,6 +17,7 @@ public class HashMapExample {
 		 // Add items on map
 		 mMap.put(100, "Mobarak");
 		 mMap.put(105, "Tuhin");
+		 mMap.put(110, "Tarek");
 		 mMap.put(110, "Tarek");
 		 mMap.put(115, "Rupom");
 		 mMap.put(120, "Mostafiz");
@@ -27,8 +29,8 @@ public class HashMapExample {
 
 	}
 	private static void intializedMap(){
-		mMap = new HashMap<>();
-		mStudentMap = new HashMap<>();
+		mMap = new LinkedHashMap<>();
+		mStudentMap = new LinkedHashMap<>();
 	}
 	
 	private static void addItemsIntoMap(){
