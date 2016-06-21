@@ -1,4 +1,4 @@
-package list;
+package collectionframework;
 import java.util.ArrayList;
 
 import model.Student;

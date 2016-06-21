@@ -1,4 +1,4 @@
-package list;
+package collectionframework;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -151,7 +151,7 @@ public class ListExample {
 		while(iterator.hasNext()){
 			String s = iterator.next();
 			iterator.remove();
-			System.out.println("Removed: ");
+			System.out.println("Removed: "+s);
 		}
 		System.out.println(items.toString());
 	}

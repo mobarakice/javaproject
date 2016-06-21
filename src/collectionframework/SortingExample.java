@@ -1,4 +1,4 @@
-package list;
+package collectionframework;
 
 public class SortingExample {
 
