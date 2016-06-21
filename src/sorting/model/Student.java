@@ -1,6 +1,6 @@
-package model;
+package sorting.model;
 
-public class Student {
+public class Student implements Comparable {
 	String roll;
 	String name;
 	int age;
@@ -34,7 +34,17 @@ public class Student {
 	@Override
 	public String toString() {
 		return roll + "\t" + name + "\t" + age;
-		 	
+	}
+	@Override
+	public int compareTo(Object o) {
+		 Student st = (Student)o;
+		 if(age==st.getAge()){
+			 return 0;
+		 }else if(age>st.getAge()){
+			return 1;
+		 }else{ 
+		   return -1;
+		 }
 	}
 	 
 	
