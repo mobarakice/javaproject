@@ -1,5 +1,6 @@
 package io;
 
+import java.io.Console;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -10,9 +11,10 @@ public class IOExample {
 	 
 	public static void main(String[] args) {
 		
-		writeFile();
-		readFile();
-		readAndWriteFile();
+		//writeFile();
+		//readFile();
+		//readAndWriteFile();
+		readDataFromKeyboardByUsingConsole();
 
 	}
 	
@@ -63,6 +65,17 @@ public class IOExample {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public static void readDataFromKeyboardByUsingConsole(){
+		Console c = System.console();
+		if(c==null){
+			System.out.println("Consle is null.");
+			return;
+		}
+		System.out.println("Enter yor name..........");
+		String name = c.readLine();
+		System.out.println("Your name is "+name);
 	}
 
 }
