@@ -1,4 +1,4 @@
-package util;
+package utilexample;
 
 public class RedixExample {
 		  public static final String EXAMPLE_TEST = "This is my small example "

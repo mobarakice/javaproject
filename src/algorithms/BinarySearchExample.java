@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class BinarySearchExample {
 	
 	private static int[] primes = new int[25];
+	//private static int[] nums = {24,65,8,98,76,86,23,12,32};
 
 	 
 	public static void main(String[] args) {
@@ -14,7 +15,7 @@ public class BinarySearchExample {
 		 Scanner sc = new Scanner(System.in);
 		 System.out.println("Enter finding prime number: ");
 		 int n = sc.nextInt();
-		 int position = findAnItemByUsingBanarySearch(n);
+		 int position = findAnItemByUsingBanarySearch(primes,n);
 		 System.out.println("Index is "+position);
 
 	}
@@ -49,16 +50,16 @@ public class BinarySearchExample {
 		return false;
 	}
 	
-	public static int findAnItemByUsingBanarySearch(int findingItem){
-		int min=0, max= primes.length-1,result = 0;
+	public static int findAnItemByUsingBanarySearch(int[] array, int findingItem){
+		int min=0, max= array.length-1,result = 0;
 		int avg = (max+min)/2;
 		
 		while(max>=min){
-			if(primes[avg]==findingItem){
+			if(array[avg]==findingItem){
 				result = avg;
 				break;
 			}
-			else if(primes[avg]>findingItem){
+			else if(array[avg]>findingItem){
 				max = avg-1;
 			}else {
 				min = avg+1;

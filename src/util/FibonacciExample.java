@@ -16,8 +16,10 @@ public class FibonacciExample {
 		fibonacciNumber(number);
 		System.out.println("\n Fibonacci series upto "+number);
 		for(int i=0;i<=number;i++){
-		System.out.print(" "+fibonacci(i));
+		//System.out.print(" "+fibonacci(i));
+			System.out.print(" "+fibonacciNumber2(i));
 		}
+		
 		
 
 	}
@@ -54,6 +56,9 @@ public class FibonacciExample {
      * @return Fibonacci number
      */
     public static int fibonacci(int number){
+    	if(number==0){
+    		return 0;
+    	}
         if(number == 1 || number == 2){
             return 1;
         }
