@@ -65,7 +65,6 @@ public class StackExample {
 			stack[top] = data;
 		}else {
 			System.out.println("Could not insert data, Stack is full.\n");
-			return;
 		}
 	}
 

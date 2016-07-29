@@ -129,7 +129,6 @@ public class LcmGcdExample {
 		}else if(a==0&&b==0){
 			gcd=0;
 		}else{
-			int big,small;
 			if(a>b){
 				 gcd = GCD(a, b);
 			}else{
