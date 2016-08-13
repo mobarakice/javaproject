@@ -10,11 +10,11 @@ public class ListExample {
 	private List<String> mList;
 	public static void main(String[] args){
 		ListExample  example = new ListExample();
-//		example.getListForLoop();
-//		example.getListForEachLoop();
-//		example.getListIterator();
-//		example.getListWhileLoop();
-//		example.removeItems();
+		example.getListForLoop();
+		example.getListForEachLoop();
+		example.getListIterator();
+		example.getListWhileLoop();
+		//example.removeItems();
 		example.removeAllIetms();
 		
 	}
@@ -123,10 +123,13 @@ public class ListExample {
 //		}
 		
 		//remove all element
+		for(int i=0;i<items.size();i++){
+			 items.remove(i);
+		}
 //		if(!items.isEmpty()){
 //			items.removeAll(items);
 //		}
-		items.clear();
+//		items.clear();
 		System.out.println(items.toString());
 		
 	}
@@ -147,11 +150,15 @@ public class ListExample {
 //			items.remove(item);
 //			System.out.println(items.toString());
 //		}
-		Iterator<String> iterator = items.iterator();
-		while(iterator.hasNext()){
-			String s = iterator.next();
-			iterator.remove();
-			System.out.println("Removed: "+s);
+//		Iterator<String> iterator = items.iterator();
+//		while(iterator.hasNext()){
+//			String s = iterator.next();
+//			iterator.remove();
+//			System.out.println("Removed: "+s);
+//		}
+		
+		for(int i = (items.size()-1);i>=0;i--){
+			items.remove(i);
 		}
 		System.out.println(items.toString());
 	}

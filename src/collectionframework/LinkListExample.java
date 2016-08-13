@@ -68,12 +68,16 @@ public class LinkListExample {
 		System.out.println("\n-----Before removing element-----");
 		System.out.println(items.toString());
 		System.out.println("\n-----After removing element-----");
-		while(iterator.hasNext()){
-			String s = iterator.next();
-			iterator.remove();
+//		while(iterator.hasNext()){
+//			String s = iterator.next();
+//			iterator.remove();
+//			System.out.println(items.toString());
+//		}
+		for(int i=(items.size()-1);i>=0;i--){
+			items.remove(i);
 			System.out.println(items.toString());
 		}
-		//System.out.println(items.toString());
+		System.out.println(items.toString());
 		
 	}
     private void removeAllItems(){

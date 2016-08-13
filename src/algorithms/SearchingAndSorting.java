@@ -262,6 +262,52 @@ public class SearchingAndSorting {
 		}
 
 	}
+	
+	// Merge sort algorithm
+	public void mergeSort(int[] arr){
+		int length = arr.length;
+		if(length<2){
+			return;
+		}
+		
+		// Split the array in half
+		int mid = length/2;
+        int[] leftArr = new int[mid];
+        int[] rightArr = new int[length -mid];
+        for(int i=0;i<mid;i++){
+        	leftArr[i]=arr[i];
+        }
+        for(int i=mid;i<length;i++){
+        	rightArr[i-mid]=arr[i];
+        }
+        
+        // Recursive call
+        mergeSort(leftArr);
+        mergeSort(rightArr);
+        // merging
+        merging(leftArr,rightArr,arr);
+	}
+	
+
+	private void merging(int[] leftArr, int[] rightArr, int[] arr) {
+		 int i=0,j=0,k=0;
+		 
+		 while(i<leftArr.length && j<rightArr.length){
+			 if(leftArr[i]<rightArr[j]){
+				 arr[k++]=leftArr[i++];
+			 }else{
+				 arr[k++]=rightArr[j++];
+			 }
+		 }
+		 while(i<leftArr.length){
+			 arr[k++]=leftArr[i++];
+		 }
+		 while(j<rightArr.length){
+			 arr[k++]=rightArr[j++];
+		 }
+		
+	}
+
 
 	private void swapValues(int firstIndex, int secondIndex) {
 		 int temp = array[firstIndex];
@@ -271,8 +317,46 @@ public class SearchingAndSorting {
 	}
 
 
+	// Quick sort Algorithm
+	
+	public void quickSort(int[] arr, int startIndex, int endIndex){
+		if(startIndex >= endIndex){
+			return;
+		}
+		int partitionIndex = partition(arr,startIndex,endIndex);
+		quickSort(arr, startIndex, partitionIndex-1);
+		quickSort(arr, partitionIndex+1, endIndex);
+		
+	}
+	
+	private int partition(int[] arr, int startIndex, int endIndex) {
+		// set pivot
+		 int pivot = arr[endIndex];
+		//set partition index
+		 int partitionIndex = startIndex;
+		 
+		 for(int i = startIndex; i<endIndex;i++){
+			 if(arr[i]<=pivot){
+				 swap(arr, i, partitionIndex);
+				 partitionIndex++;
+			 }
+		 }
+		 swap(arr,partitionIndex,endIndex);
+		 
+		return partitionIndex;
+	}
+
+
+	private void swap(int[] arr, int i, int partitionIndex) {
+		int temp = arr[i];
+		arr[i] = arr[partitionIndex];
+		arr[partitionIndex] = temp;
+		
+	}
+
+
 	public static void main(String[] args) {
-		SearchingAndSorting ss = new SearchingAndSorting(5);
+		SearchingAndSorting ss = new SearchingAndSorting(10);
 		//		 ss.generateRandomArray();
 		//		 ss.printArray();
 		//		 ss.insertValue(55);
@@ -289,9 +373,12 @@ public class SearchingAndSorting {
 //		ss.linearSearchingForValue(ss.primesAraay,17);
 //		ss.binarySearchForValue(ss.primesAraay, 17);
 	ss.generateUnsortedArray();
-	ss.bubbleSortDescendindOder();
-	System.out.println("After bubble sorting the array is: ");
+	//ss.mergeSort(ss.array);
+	ss.quickSort(ss.array, 0, ss.array.length-1);
 	ss.printArray(ss.array);
+	//ss.bubbleSortDescendindOder();
+	//System.out.println("After bubble sorting the array is: ");
+	//ss.printArray(ss.array);
 
 	}
 
