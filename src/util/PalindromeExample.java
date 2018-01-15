@@ -40,13 +40,16 @@ public class PalindromeExample {
 	public static void isPalindrome(int num){
 		
 		int temp = num;
-		StringBuffer bf = new StringBuffer();
+		//StringBuffer bf = new StringBuffer();
+		String s = "";
 		while(temp != 0){
 			int digit = temp%10;
-			bf.append(digit);
+			//bf.append(digit);
+			s = s+digit;
 			temp = temp/10;
 		}
-		int rev = Integer.parseInt((bf.toString()));
+		//int rev = Integer.parseInt((bf.toString()));
+		int rev = Integer.parseInt(s);
 		if(num==rev){
 			System.out.println(num+" is Palindrome.");
 		}else {

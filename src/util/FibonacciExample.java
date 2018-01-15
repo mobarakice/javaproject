@@ -16,10 +16,10 @@ public class FibonacciExample {
 		fibonacciNumber(number);
 		System.out.println("\n Fibonacci series upto "+number);
 		//for(int i=0;i<=number;i++){
-		System.out.print(" "+fibonacci(number));
+		//System.out.print(" "+fibonacci(number));
 			//System.out.print(" "+fibonacciNumber2(i));
 		//}
-		
+		printFiboSeriesUpToN(number);
 		
 
 	}
@@ -64,6 +64,12 @@ public class FibonacciExample {
         }
       
         return fibonacci(number-1) + fibonacci(number -2); //tail recursion
+    }
+    
+    public static void printFiboSeriesUpToN(int n){
+    	for(int i=0;i<=n;i++){
+    		System.out.print(" "+fibonacci(i));
+    	}
     }
 
 

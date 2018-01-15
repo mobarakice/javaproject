@@ -10,13 +10,25 @@ public class SimpleProblem {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter a number: ");
 		int num = sc.nextInt();
-//		checkOddEven(num);
-//		SumAndAverage(num);
-//		SumAndAverageOnlyOddNuber(num);
+		checkOddEven(num);
+		SumAndAverage(num);
+		SumAndAverageOnlyOddNuber(num);
 		SumAndAverageOnlyDivisibleBy7(num);
 		SumOfSquares(num);
-
+		swap(7,132);
+		 
 	}
+	/*
+	 * swap without using temporary variable
+	 */
+	public static void swap(int a, int b){
+		System.out.println("Before swap:\nA = "+a+"\t"+"B = "+b);
+		a = a+b;
+		b = a-b;
+		a=a-b;
+		System.out.println("After swap:\nA = "+a+"\t"+"B = "+b);
+	}
+	
 	/*
 	 * Write a program called CheckOddEven 
 	 */
@@ -82,7 +94,7 @@ public class SimpleProblem {
 	}
 	
 	/*
-	 *  Find the "sum of the squares" of all the numbers from 1 to 100, i.e. 1*1 + 2*2 + 3*3 + ... + 100*100. 
+	 *  Find the "sum of the squares" of all the numbers from 1 to 100, i.e. 1*1 + 2*2 + 3*2 + ... + 100*2. 
 	 *   
 	 */
 	public static void SumOfSquares(int num){

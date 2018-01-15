@@ -46,33 +46,64 @@ public class BJITExam {
 			System.out.println(j+"\t"+list[j]);
 		}
 	}
-	
+	/**
+	 * 
+	 * @param array
+	 * @return
+	 */
 	public int findMaximum(int[] array){
 		int max = array[0];
 		for(int i=1; i<array.length; i++){
-//			if(array[i]>max){
-//				max = array[i];
-//			}
-			max = Math.max(max, array[i]);
+			max = max(max, array[i]);
+//			max = Math.max(max, array[i]);
 		}
 		return max;
 	}
 	
-	// Find max value in an unsorted array of ints.
+	/**
+	 * Invoke to find maximum value in an unsorted array of Integer types
+	 * @param array
+	 * @param startIndex
+	 * @return
+	 */
 	public int findMaximumRecursively(int[] array, int startIndex){
 		if (startIndex == array.length - 1) {
 			return array[startIndex];
 		} else {
-			return Math.max (array[startIndex],
+//			return Math.max (array[startIndex],
+//					findMaximumRecursively(array, startIndex+1)) ;
+			return max (array[startIndex],
 					findMaximumRecursively(array, startIndex+1)) ;
 		}
+	}
+	
+	/**
+	 * Invoke to find maximum between two numbers
+	 * @param a
+	 * @param b
+	 * @return maximum
+	 */
+	public int max(int a, int b){
+		return a>b?a:b;
+	}
+	
+	/**
+	 * Invoke to find minimum between two numbers
+	 * @param a
+	 * @param b
+	 * @return minimum
+	 */
+	public int min(int a, int b){
+		return a>b?b:a;
 	}
 	
 	public int findMinimumRecursively(int[] array, int startIndex){
 		if (startIndex == array.length - 1) {
 			return array[startIndex];
 		} else {
-			return Math.min (array[startIndex],
+//			return Math.min (array[startIndex],
+//					findMinimumRecursively(array, startIndex+1)) ;
+			return min (array[startIndex],
 					findMinimumRecursively(array, startIndex+1)) ;
 		}
 	}
@@ -84,6 +115,7 @@ public class BJITExam {
 		}
 		printArray();
 	}
+	
 	public int[] reverseArray(int[] a, int startIndex ){
 		lastIndex=(a.length-1);
 		if(startIndex==(a.length/2)-1){
@@ -96,6 +128,7 @@ public class BJITExam {
 		return reverseArray(a, startIndex++);
 		}
 	}
+	
 	public void swap(int a,int b){
 		int temp = list[a];
 		list[a] = list[b];
